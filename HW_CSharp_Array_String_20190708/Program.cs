@@ -87,7 +87,7 @@ namespace ConsoleApp3
             Console.WriteLine(" сумма элементов подматрицы = " + sum);
 
 
-            Console.ReadKey();
+            Console.ReadKey(); 
 
         }
 
