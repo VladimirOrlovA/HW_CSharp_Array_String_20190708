@@ -54,8 +54,8 @@ namespace ConsoleApp3
                         }
 
             Console.WriteLine("\n----------------------------------------------\n");
-            Console.WriteLine("max1 = " + max1 + " x1 = " + x1 + " y1 = " + y1);
-            Console.WriteLine("max2 = " + max2 + " x2 = " + x2 + " y2 = " + y2);
+            Console.WriteLine(" max1 = " + max1 + " x1 = " + x1 + " y1 = " + y1);
+            Console.WriteLine(" max2 = " + max2 + " x2 = " + x2 + " y2 = " + y2);
 
             // определяем размер подматрицы в пределах max1 и max2
             // определяем границы обхода подматрицы
@@ -84,7 +84,7 @@ namespace ConsoleApp3
                     sum += arr[i, j];
 
 
-            Console.WriteLine("sum = " + sum);
+            Console.WriteLine(" сумма элементов подматрицы = " + sum);
 
 
 
