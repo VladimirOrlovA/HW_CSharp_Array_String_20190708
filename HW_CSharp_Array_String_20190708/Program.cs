@@ -16,8 +16,8 @@ namespace ConsoleApp3
 
         {
             Random rnd = new Random();  // объявляем переменную/объект для генерации псевдослучайных чисел
-            int l = 4;
-            int c = 4;
+            int l = 5;
+            int c = 5;
 
             int max1 = -100,        // для превого максимума
                 max2 = max1 - 1,    // чтобы обеспечить неравенство max1 и max2 в цикле while
@@ -154,8 +154,6 @@ namespace ConsoleApp3
             Console.WriteLine("\n\n\n---- Подматрица с максимальной суммой элементов ------\n");
             Console.WriteLine("   Номер подматрицы = " + (matrixNumber + 1) + ", сумма элементов = " + maxSumArr);
 
-            sum = 0;
-
             Console.WriteLine("\n--------------- координаты подматрицы ----------------\n");
             Console.WriteLine(" x1 = " + mx1 + "\t x2 = " + mx2);
             Console.WriteLine(" y1 = " + my1 + "\t y2 = " + my2);
@@ -166,7 +164,6 @@ namespace ConsoleApp3
                 for (int j = my1; j <= my2; j++)
                 {
                     Console.Write(arr[i, j] + "\t");
-                    sum += arr[i, j];
                 }
                 Console.WriteLine();
             }
@@ -174,7 +171,6 @@ namespace ConsoleApp3
             Console.WriteLine("\n------------------------------------------------------\n");
             Console.ReadKey();
         }
-
 
         // функция вывода массива в консоль
         public static void PrintArr(int[,] arr, int l, int c)
@@ -186,6 +182,5 @@ namespace ConsoleApp3
                 Console.WriteLine();
             }
         }
-
     }
 }
