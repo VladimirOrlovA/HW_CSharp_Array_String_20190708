@@ -88,14 +88,16 @@ namespace ConsoleApp3
                     y2 = tmpY;
                 }
 
-                Console.WriteLine("\n----------- координаты подматрицы ------------\n");
-                Console.WriteLine(" x1 = " + x1 + " y1 = " + y1);
-                Console.WriteLine(" x2 = " + x2 + " y2 = " + y2);
+                //Console.WriteLine("\n----------- координаты подматрицы ------------\n");
+                //Console.WriteLine(" x1 = " + x1 + " y1 = " + y1);
+                //Console.WriteLine(" x2 = " + x2 + " y2 = " + y2);
 
                 // вичесляем сумму элементов подматрицы по полученным координатам
                 int sum = 0;
 
-                if (x1!=x2 && y1!=y2) // смотрим/считаем подматрицу имеющую ненулевые размеры
+                if (!(x1 == x2 && y1 == y2)) // смотрим/считаем подматрицу имеющую ненулевые размеры
+                //    //Console.WriteLine("нулевая");
+                //else
                 {
                     Console.WriteLine("\n--------------- подматрица № {0} -------------------\n", count + 1);
 
@@ -103,10 +105,10 @@ namespace ConsoleApp3
                     {
                         for (int j = y1; j <= y2; j++)
                         {
-                            Console.Write(arr[i, j] + "\t");
+                            //Console.Write(arr[i, j] + "\t");
                             sum += arr[i, j];
                         }
-                        Console.WriteLine();
+                        //Console.WriteLine();
                     }
 
                     Console.WriteLine("\nCумма элементов подматрицы = " + sum);
