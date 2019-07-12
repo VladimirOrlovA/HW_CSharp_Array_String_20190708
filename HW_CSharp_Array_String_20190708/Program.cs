@@ -30,13 +30,15 @@ namespace ConsoleApp3
 
             PrintArr(arr, l, c); // вызов функции вывода массива в консоль
 
-            // ищем два максимальных значения в текущем массиве
-
-            int max1 = -100, max2 = -100, count = 0;
+            int max1 = -100, max2 = -100, count = 0, maxSumArr = 0;
             int x1 = 0, y1 = 0, x2 = -1, y2 = -1;
 
-            while (count < 20) //(x1 != x2 || y1 != y2)
+            // ищем подматрицу, имеющую ненулевые размеры, с максимальной суммой элементов.
+            while (count < 20)
             {
+
+
+
                 if (count > 0)
                 {
                     max1 = max2;
@@ -66,9 +68,9 @@ namespace ConsoleApp3
                             y2 = j;
                         }
 
-                Console.WriteLine("\n----------- координаты максимумов ------------\n");
-                Console.WriteLine(" max1 = " + max1 + " x1 = " + x1 + " y1 = " + y1);
-                Console.WriteLine(" max2 = " + max2 + " x2 = " + x2 + " y2 = " + y2);
+                //Console.WriteLine("\n----------- координаты максимумов ------------\n");
+                //Console.WriteLine(" max1 = " + max1 + " x1 = " + x1 + " y1 = " + y1);
+                //Console.WriteLine(" max2 = " + max2 + " x2 = " + x2 + " y2 = " + y2);
 
                 // определяем размер подматрицы в пределах max1 и max2
                 // определяем границы обхода подматрицы
@@ -93,21 +95,24 @@ namespace ConsoleApp3
                 // вичесляем сумму элементов подматрицы по полученным координатам
                 int sum = 0;
 
-                Console.WriteLine("\n--------------- подматрица № {0} -------------------\n", count + 1);
-
-                for (int i = x1; i <= x2; i++)
+                if (x1!=x2 && y1!=y2) // смотрим/считаем подматрицу имеющую ненулевые размеры
                 {
-                    for (int j = y1; j <= y2; j++)
+                    Console.WriteLine("\n--------------- подматрица № {0} -------------------\n", count + 1);
+
+                    for (int i = x1; i <= x2; i++)
                     {
-                        Console.Write(arr[i, j] + "\t");
-                        sum += arr[i, j];
+                        for (int j = y1; j <= y2; j++)
+                        {
+                            Console.Write(arr[i, j] + "\t");
+                            sum += arr[i, j];
+                        }
+                        Console.WriteLine();
                     }
-                    Console.WriteLine();
+
+                    Console.WriteLine("\nCумма элементов подматрицы = " + sum);
+                    Console.WriteLine("\n----------------------------------------------\n");
+                    //count++;
                 }
-
-                Console.WriteLine("\nCумма элементов подматрицы = " + sum);
-                Console.WriteLine("\n----------------------------------------------\n");
-
                 count++;
             }
             Console.ReadKey();
